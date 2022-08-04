@@ -38,27 +38,47 @@ void task1()
         uint8_t btn1State = digitalRead(button1Pin);
         uint8_t btn2State = digitalRead(button2Pin);
 
+        //Serial.println("Hello");
+        //delay(1000);
+
         // Evento 1
-        if (btn1State == LOW, btn2State == LOW)
+        if (btn1State == LOW && btn2State == LOW)
         {
+
+            digitalWrite(ledGreen, LOW);
+            digitalWrite(ledBlue, LOW);
+            digitalWrite(ledYellow, LOW);
             digitalWrite(ledRed, HIGH);
         }
         // Evento 2
 
-        if (btn1State == LOW, btn2State == HIGH)
+        if (btn1State == LOW && btn2State == HIGH)
         {
+
+            digitalWrite(ledRed, LOW);
+            digitalWrite(ledBlue, LOW);
+            digitalWrite(ledYellow, LOW);
             digitalWrite(ledGreen, HIGH);
         }
 
         // Evento 3
-        if (btn1State == HIGH, btn2State == LOW)
+        if (btn1State == HIGH && btn2State == LOW)
         {
+
+            digitalWrite(ledRed, LOW);
+            digitalWrite(ledGreen, LOW);
+            digitalWrite(ledYellow, LOW);
             digitalWrite(ledBlue, HIGH);
         }
         // Evento 4
-        if (btn1State == HIGH, btn2State == HIGH)
+        if (btn1State == HIGH && btn2State == HIGH)
         {
+
+            digitalWrite(ledRed, LOW);
+            digitalWrite(ledGreen, LOW);
+            digitalWrite(ledBlue, LOW);
             digitalWrite(ledYellow, HIGH);
+            Serial.print("ledYellow on\n");
         }
 
         break;
